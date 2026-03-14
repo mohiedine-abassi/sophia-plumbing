@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sophia Plumbing & HVAC Services - Your Trusted Partner</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -13,38 +12,38 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
-            color: #1F2937;
-            overflow-x: hidden;
+            color: #333;
         }
 
-        /* Top Bar */
+        /* Top Bar Styles */
         .top-bar {
-            background: #6B21A8;
-            padding: 0.75rem 0;
+            background: #6b21a8;
+            color: white;
+            padding: 0.5rem 0;
+            font-size: 0.875rem;
         }
 
         .top-bar-content {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1rem;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .top-bar-links {
             display: flex;
             gap: 0.5rem;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .top-bar-links a {
-            color: #FFFFFF;
+            color: white;
             text-decoration: none;
-            font-size: 0.875rem;
-            font-weight: 500;
-            padding: 0.25rem 0.75rem;
             transition: opacity 0.3s;
         }
 
@@ -52,31 +51,32 @@
             opacity: 0.8;
         }
 
-        .top-bar-separator {
-            color: rgba(255, 255, 255, 0.6);
+        .top-bar-divider {
+            color: rgba(255,255,255,0.5);
         }
 
-        /* Main Header */
-        .main-header {
-            background: linear-gradient(135deg, #FED7AA 0%, #F5D0FE 50%, #E9D5FF 100%);
-            padding: 2rem 0;
+        /* Header Styles */
+        .header-main {
+            background: linear-gradient(135deg, #ffedd5 0%, #f3e8ff 100%);
+            padding: 1.5rem 0;
         }
 
         .header-content {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 2rem;
         }
 
         .logo img {
-            height: 200px;
-            width: auto;
+            max-width: 250px;
+            height: auto;
         }
 
-        .header-right {
+        .header-contact {
             display: flex;
             align-items: center;
             gap: 2rem;
@@ -84,76 +84,89 @@
 
         .phone-number {
             display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: #6B21A8;
-            text-decoration: none;
+            flex-direction: column;
+            gap: 0.25rem;
         }
 
-        .phone-number i {
-            font-size: 4rem;
+        .phone-number a {
+            color: #6b21a8;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .phone-label {
+            color: #6b21a8;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 1rem;
         }
 
         .btn {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 3rem;
-            cursor: pointer;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.3s;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            text-align: center;
         }
 
-        .btn-primary {
-            background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
-            color: #FFFFFF;
-            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.35);
+        .btn-orange {
+            background: #fb923c;
+            color: white;
         }
 
-        .btn-primary:hover {
+        .btn-orange:hover {
+            background: #f97316;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(249, 115, 22, 0.45);
+            box-shadow: 0 4px 12px rgba(251, 146, 76, 0.4);
         }
 
         .btn-outline {
-            background: #FFFFFF;
-            color: #6B21A8;
-            border: 2.5px solid #6B21A8;
-            box-shadow: 0 4px 12px rgba(107, 33, 168, 0.15);
+            background: white;
+            color: #6b21a8;
+            border: 2px solid #6b21a8;
         }
 
         .btn-outline:hover {
-            background: #6B21A8;
-            color: #FFFFFF;
+            background: #6b21a8;
+            color: white;
             transform: translateY(-2px);
         }
 
-        /* Sticky Navigation */
+        /* Main Navigation */
         .main-nav {
-            background: #6B21A8;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
-        .nav-content {
-            max-width: 1280px;
+        .nav-container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1rem;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            justify-content: center;
-            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+            gap: 0.5rem;
         }
 
         .nav-menu > li {
@@ -162,37 +175,38 @@
 
         .nav-menu > li > a {
             display: block;
-            color: #FFFFFF;
+            padding: 1rem 1.25rem;
+            color: #1f2937;
             text-decoration: none;
-            padding: 1rem 0.825rem;
             font-weight: 600;
-            font-size: 0.7rem;
             transition: all 0.3s;
+            white-space: nowrap;
         }
 
-        .nav-menu > li:hover > a {
-            background: rgba(255,255,255,0.1);
+        .nav-menu > li > a:hover {
+            color: #6b21a8;
+            background: #f3e8ff;
         }
 
-        .dropdown-menu li{
-            list-style:none;
-        }
+        /* Dropdown Menu */
         .dropdown-menu {
             position: absolute;
             top: 100%;
             left: 0;
-            background: #FFFFFF;
+            background: white;
             min-width: 280px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            border-radius: 0 0 0.75rem 0.75rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            border-radius: 0 0 8px 8px;
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
             transition: all 0.3s;
+            list-style: none;
+            padding: 0.5rem 0;
             z-index: 1001;
         }
 
-        .nav-menu > li:hover .dropdown-menu {
+        .dropdown:hover .dropdown-menu {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
@@ -200,1108 +214,509 @@
 
         .dropdown-menu li a {
             display: block;
-            padding: 0.875rem 1.25rem;
-            color: #1F2937;
+            padding: 0.75rem 1.25rem;
+            color: #374151;
             text-decoration: none;
-            font-size: 0.9rem;
-            border-bottom: 1px solid #F3F4F6;
             transition: all 0.3s;
         }
 
         .dropdown-menu li a:hover {
-            background: #F5F3FF;
-            color: #6B21A8;
-            padding-left: 1.5rem;
+            background: #f3e8ff;
+            color: #6b21a8;
         }
 
-        /* Hero Section */
-        .hero {
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1002;
+        }
+
+        .hamburger span {
+            width: 30px;
+            height: 3px;
+            background: #6b21a8;
+            border-radius: 3px;
+            transition: all 0.3s;
             position: relative;
-            padding: 5rem 0;
-            background: linear-gradient(135deg, rgb(107 33 168 / 10%) 0%, rgb(168 85 247 / 30%) 100%), url(header.png) center / cover;
-            background-attachment: fixed;
+            transform-origin: center;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 992px) {
+            .top-bar-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                gap: 0;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu > li {
+                width: 100%;
+            }
+
+            .nav-menu > li > a {
+                padding: 1rem 1.5rem;
+                border-bottom: 1px solid #f3f4f6;
+            }
+
+            .dropdown-menu {
+                position: static;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                box-shadow: none;
+                background: #fafafa;
+                min-width: 100%;
+                display: none;
+                padding-left: 1rem;
+            }
+
+            .dropdown.active .dropdown-menu {
+                display: block;
+            }
+
+            .dropdown > a::after {
+                content: ' ▼';
+                font-size: 0.75rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .header-contact {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .phone-number {
+                align-items: center;
+            }
+
+            .phone-number a {
+                font-size: 1.25rem;
+            }
+
+            .header-buttons {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .logo img {
+                max-width: 200px;
+            }
+
+            .phone-number a {
+                font-size: 1.125rem;
+            }
+
+            .btn {
+                padding: 0.625rem 1.25rem;
+                font-size: 0.875rem;
+            }
+
+            .header-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .header-buttons .btn {
+                width: 100%;
+            }
+        }
+
+        /* Rest of your existing styles */
+        .hero {
+            background: linear-gradient(135deg, #ffedd5 0%, #f3e8ff 100%);
+            padding: 4rem 1rem;
         }
 
         .hero-content {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
             align-items: center;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(249, 115, 22, 0.9);
-            color: #FFFFFF;
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-weight: 700;
-            font-size: 0.875rem;
-            margin-bottom: 1.5rem;
         }
 
         .hero-text h1 {
-            font-size: 3.25rem;
-            color: #FFFFFF;
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-            font-weight: 800;
-        }
-
-        .hero-text h1 span {
-            color: #F97316;
-        }
-
-        .hero-text > p {
-            color: #FFFFFF;
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            line-height: 1.8;
-        }
-
-        .hero-features {
-            list-style: none;
-            margin-bottom: 2.5rem;
-        }
-
-        .hero-features li {
-            display: flex;
-            align-items: center;
-            gap: 0.875rem;
-            color: #FFFFFF;
-            margin-bottom: 0.875rem;
-            font-size: 1rem;
-        }
-
-        .hero-features i {
-            color: #F97316;
-            font-size: 1.25rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 3rem;
-        }
-
-        .stat-item h3 {
-            color: #F97316;
             font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 0.25rem;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            line-height: 1.2;
         }
 
-        .stat-item p {
-            color: #FFFFFF;
-            font-size: 0.875rem;
-            opacity: 0.9;
+        .hero-text p {
+            font-size: 1.125rem;
+            color: #4b5563;
+            margin-bottom: 2rem;
         }
 
-        /* Quote Form */
-        .quote-form-container {
-            background: #FFFFFF;
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            box-shadow: 0 0 40px rgba(249, 115, 22, 0.4), 0 25px 50px rgba(0,0,0,0.25);
-            position: relative;
-            border: solid 1px #fb8f39;
+        .hero-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
 
-        .quote-form-container::before {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
-            color: #FFFFFF;
-            padding: 0.625rem 1.5rem;
-            border-radius: 2rem;
-            font-weight: 700;
-            font-size: 0.875rem;
+        .badge {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #6b21a8;
         }
 
-        .quote-form-container::before {
-            content: '⚡ GET YOUR FREE ESTIMATE';
-        }
-
-        .quote-form h3 {
-            color: #6B21A8;
-            margin-bottom: 1.5rem;
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-top: 0.5rem;
-        }
-
-        .form-row {
+        .hero-stats {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #6b21a8;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 1rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+
+        .emergency-badge {
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fb923c;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 12px rgba(251, 146, 76, 0.4);
+        }
+
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .section {
+            padding: 4rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            color: #6b7280;
+            font-size: 1.125rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .feature-icon {
+            width: 64px;
+            height: 64px;
+            background: #f3e8ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+        }
+
+        .feature-card h3 {
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: #6b7280;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .service-card h3 {
+            color: #6b21a8;
+            margin-bottom: 0.5rem;
+        }
+
+        .service-card p {
+            color: #6b7280;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #1f2937;
+        }
+
+        .testimonial-role {
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .form-group {
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 600;
-            color: #1F2937;
-            font-size: 0.875rem;
+            color: #1f2937;
         }
 
         .form-group input,
         .form-group select,
         .form-group textarea {
             width: 100%;
-            padding: 0.875rem 1rem;
-            border: 2px solid #E5E7EB;
-            border-radius: 0.75rem;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
             font-size: 1rem;
-            transition: all 0.3s;
-            font-family: inherit;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #9333EA;
-            box-shadow: 0 0 0 3px rgba(147, 51, 234, 0.1);
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 80px;
+            min-height: 100px;
         }
 
         .btn-submit {
             width: 100%;
-            background: linear-gradient(135deg, #7C3AED 0%, #A855F7 100%);
-            color: #FFFFFF;
             padding: 1rem;
+            background: #6b21a8;
+            color: white;
             border: none;
-            border-radius: 0.75rem;
-            font-weight: 700;
+            border-radius: 0.5rem;
             font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
+            transition: background 0.3s;
         }
 
         .btn-submit:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+            background: #581c87;
         }
 
-        .form-security {
-            text-align: center;
-            margin-top: 1rem;
-            font-size: 0.875rem;
-            color: #6B7280;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-        }
-
-        /* Section Styles */
-        section {
-            padding: 6rem 0;
-        }
-
-        .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .section-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, #9333EA 0%, #6B21A8 100%);
-            color: #FFFFFF;
-            padding: 0.5rem 1.25rem;
-            border-radius: 2rem;
-            font-size: 0.875rem;
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .section-title {
-            font-size: 2.75rem;
-            color: #1F2937;
-            margin-bottom: 1rem;
-            font-weight: 800;
-        }
-
-        .section-subtitle {
-            color: #6B7280;
-            font-size: 1.125rem;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.8;
-        }
-
-        /* Professional Service Section */
-        .professional-service {
-            background: #FFFFFF;
-        }
-
-        .service-content {
+        .contact-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 5rem;
-            align-items: center;
-        }
-
-        .service-image-wrapper {
-            position: relative;
-        }
-
-        .service-image {
-            border-radius: 1.5rem;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .service-image img {
-            width: 100%;
-            height: 500px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .experience-badge {
-            position: absolute;
-            bottom: 2rem;
-            left: -2rem;
-            background: #FFFFFF;
-            padding: 2rem;
-            border-radius: 1.25rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            text-align: center;
-            min-width: 200px;
-        }
-
-        .experience-badge .years {
-            font-size: 3rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #6B21A8 0%, #9333EA 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .experience-badge .text {
-            font-size: 0.9rem;
-            color: #6B7280;
-            margin-top: 0.5rem;
-            font-weight: 600;
-        }
-
-        .service-text h2 {
-            font-size: 2.25rem;
-            color: #6B21A8;
-            margin-bottom: 1.25rem;
-            font-weight: 800;
-        }
-
-        .service-text > p {
-            color: #6B7280;
-            margin-bottom: 1.5rem;
-            line-height: 1.9;
-        }
-
-        .service-features {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1.25rem;
-            background: linear-gradient(135deg, #F3F4F6 0%, #F5F3FF 100%);
-            border-radius: 1rem;
-        }
-
-        .feature-icon {
-            background: linear-gradient(135deg, #6B21A8 0%, #9333EA 100%);
-            color: #FFFFFF;
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .feature-text h4 {
-            color: #1F2937;
-            margin-bottom: 0.25rem;
-            font-weight: 700;
-        }
-
-        .feature-text p {
-            font-size: 0.875rem;
-            color: #6B7280;
-        }
-
-        /* Spring Specials */
-        .spring-specials {
-            background: linear-gradient(135deg, #F97316 0%, #FDBA74 100%);
-            color: #FFFFFF;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .spring-specials::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 600px;
-            height: 600px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-        }
-
-        .spring-specials .section-tag {
-            background: rgba(255,255,255,0.25);
-        }
-
-        .spring-specials .section-title,
-        .spring-specials .section-subtitle {
-            color: #FFFFFF;
-        }
-
-        .specials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .special-card {
-            background: #FFFFFF;
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            color: #1F2937;
-            transition: all 0.3s;
-        }
-
-        .special-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-        }
-
-        .special-card.featured {
-            background: linear-gradient(135deg, #6B21A8 0%, #9333EA 100%);
-            color: #FFFFFF;
-            transform: scale(1.05);
-        }
-
-        .special-card.featured h3,
-        .special-card.featured p {
-            color: #FFFFFF;
-        }
-
-        .discount-badge {
-            background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
-            color: #FFFFFF;
-            padding: 0.625rem 1.25rem;
-            border-radius: 2rem;
-            display: inline-block;
-            font-weight: 700;
-            margin-bottom: 1.25rem;
-        }
-
-        .special-card h3 {
-            color: #6B21A8;
-            margin-bottom: 1rem;
-            font-size: 1.375rem;
-            font-weight: 700;
-        }
-
-        .special-card p {
-            color: #6B7280;
-            line-height: 1.7;
-        }
-
-        .specials-cta {
-            text-align: center;
-            margin-top: 4rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Services Slider */
-        .services-slider-section {
-            background: linear-gradient(135deg, #F5F3FF 0%, #FDE68A 100%);
-            overflow: hidden;
-        }
-
-        .slider-container {
-            position: relative;
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 4rem;
-        }
-
-        .slider-wrapper {
-            overflow: hidden;
-        }
-
-        .slider-track {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .services-grid-slider {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            flex-shrink: 0;
-            width: 100%;
-        }
-
-        .service-card-slider {
-            background: #FFFFFF;
-            border-radius: 1.25rem;
-            padding: 2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: all 0.3s;
-            text-align: center;
-        }
-
-        .service-card-slider:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .service-card-slider-icon {
-            width: 72px;
-            height: 72px;
-            border-radius: 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin: 0 auto 1.5rem;
-        }
-
-        .service-card-slider:nth-child(1) .service-card-slider-icon { background: linear-gradient(135deg, #DBEAFE 0%, #BFDBFE 100%); color: #2563EB; }
-        .service-card-slider:nth-child(2) .service-card-slider-icon { background: linear-gradient(135deg, #FED7AA 0%, #FDBA74 100%); color: #EA580C; }
-        .service-card-slider:nth-child(3) .service-card-slider-icon { background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%); color: #059669; }
-        .service-card-slider:nth-child(4) .service-card-slider-icon { background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%); color: #D97706; }
-        .service-card-slider:nth-child(5) .service-card-slider-icon { background: linear-gradient(135deg, #D1FAE5 0%, #A7F3D0 100%); color: #10B981; }
-        .service-card-slider:nth-child(6) .service-card-slider-icon { background: linear-gradient(135deg, #FECACA 0%, #FCA5A5 100%); color: #DC2626; }
-
-        .service-card-slider h3 {
-            color: #1F2937;
-            margin-bottom: 0.75rem;
-            font-size: 1.125rem;
-            font-weight: 700;
-        }
-
-        .service-card-slider p {
-            color: #6B7280;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        .slider-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: linear-gradient(135deg, #6B21A8 0%, #9333EA 100%);
-            color: #FFFFFF;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            border: none;
-            cursor: pointer;
-            font-size: 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 12px rgba(107, 33, 168, 0.3);
-            transition: all 0.3s;
-            z-index: 10;
-        }
-
-        .slider-btn:hover {
-            transform: translateY(-50%) scale(1.1);
-            box-shadow: 0 6px 20px rgba(107, 33, 168, 0.4);
-        }
-
-        .slider-btn.prev {
-            left: 0;
-        }
-
-        .slider-btn.next {
-            right: 0;
-        }
-
-        /* Gallery Section */
-        .gallery {
-            background: #FFFFFF;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.75rem;
-        }
-
-        .gallery-item {
-            position: relative;
-            border-radius: 1.25rem;
-            overflow: hidden;
-            aspect-ratio: 4/3;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .gallery-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(107, 33, 168, 0.9) 0%, rgba(147, 51, 234, 0.9) 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        .gallery-item:hover .gallery-overlay {
-            opacity: 1;
-        }
-
-        .gallery-overlay i {
-            color: #FFFFFF;
-            font-size: 2.5rem;
-        }
-
-        .gallery-category {
-            position: absolute;
-            top: 1.25rem;
-            left: 1.25rem;
-            background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
-            color: #FFFFFF;
-            padding: 0.5rem 1rem;
-            border-radius: 2rem;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            background: linear-gradient(135deg, #6B21A8 0%, #581C87 100%);
-            color: #FFFFFF;
-        }
-
-        .testimonials .section-title,
-        .testimonials .section-subtitle {
-            color: #FFFFFF;
-        }
-
-        .testimonials-rating {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            margin-bottom: 4rem;
-        }
-
-        .stars {
-            color: #FBBF24;
-            font-size: 1.5rem;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
 
-        .testimonial-card {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(12px);
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .testimonial-stars {
-            color: #FBBF24;
-            margin-bottom: 1.25rem;
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 2rem;
-            line-height: 1.9;
-        }
-
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-        }
-
-        .author-avatar {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #F97316 0%, #FB923C 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-        }
-
-        .author-info h4 {
-            margin-bottom: 0.25rem;
-        }
-
-        .author-info p {
-            font-size: 0.875rem;
-            opacity: 0.8;
-        }
-
-        /* Quote Request */
-        .quote-request {
-            background: linear-gradient(135deg, #F5F3FF 0%, #FED7AA 100%);
-        }
-
-        .quote-request-content {
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 4rem;
-        }
-
-        .quote-request-form {
-            background: #FFFFFF;
-            padding: 3rem;
-            border-radius: 1.5rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .why-choose-us {
-            background: #FFFFFF;
-            padding: 2.5rem;
-            border-radius: 1.5rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-
-        .why-choose-us h3 {
-            color: #6B21A8;
-            margin-bottom: 1.75rem;
-            font-size: 1.5rem;
-        }
-
-        .why-list {
-            list-style: none;
-        }
-
-        .why-list li {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.25rem;
-            padding: 1rem;
-            background: linear-gradient(135deg, #F3F4F6 0%, #F5F3FF 100%);
-            border-radius: 0.875rem;
-        }
-
-        .why-list i {
-            color: #6B21A8;
-        }
-
-        .emergency-box {
-            background: linear-gradient(135deg, #6B21A8 0%, #9333EA 100%);
-            color: #FFFFFF;
-            padding: 2.5rem;
-            border-radius: 1.5rem;
+        .contact-card {
             text-align: center;
-        }
-
-        .emergency-box h3 {
-            margin-bottom: 1rem;
-        }
-
-        .emergency-box p {
-            opacity: 0.95;
-            margin-bottom: 1.5rem;
-        }
-
-        .review-card {
-            background: #FFFFFF;
             padding: 2rem;
-            border-radius: 1.25rem;
-            margin-top: 2rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        }
-
-        /* Contact Section */
-        .contact {
-            background: #FFFFFF;
-        }
-
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.5rem;
-            padding: 1.75rem;
-            background: linear-gradient(135deg, #F3F4F6 0%, #F5F3FF 100%);
-            border-radius: 1.25rem;
         }
 
         .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #6B21A8 0%, #9333EA 100%);
-            color: #FFFFFF;
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .contact-details h4 {
-            color: #1F2937;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            font-size: 0.875rem;
-            text-transform: uppercase;
-        }
-
-        .contact-details p {
-            color: #6B7280;
-            line-height: 1.8;
-        }
-
-        .social-box {
-            background: linear-gradient(135deg, #6B21A8 0%, #9333EA 100%);
-            padding: 2rem;
-            border-radius: 1.25rem;
-            margin-top: 1rem;
-        }
-
-        .social-box h4 {
-            color: #FFFFFF;
-            margin-bottom: 1.25rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .social-links a {
-            width: 35px;
-            height: 35px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #FFFFFF;
-            transition: all 0.3s;
-            text-decoration: none;
-        }
-
-        .social-links a:hover {
-            background: #F97316;
-            transform: translateY(-3px);
-        }
-
-        .map-container {
-            background: linear-gradient(135deg, #F3F4F6 0%, #F5F3FF 100%);
-            border-radius: 1.5rem;
-            padding: 2.5rem;
-        }
-
-        .map-placeholder {
-            background: linear-gradient(135deg, #6B21A8 0%, #9333EA 50%, #F97316 100%);
-            height: 320px;
-            border-radius: 1.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #FFFFFF;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .map-placeholder i {
-            font-size: 3rem;
+            font-size: 2rem;
             margin-bottom: 1rem;
-            display: block;
         }
 
-        .service-areas {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-
-        .area-tag {
-            background: #FFFFFF;
-            padding: 0.625rem 1.25rem;
-            border-radius: 2rem;
-            font-size: 0.875rem;
-            color: #6B21A8;
-            font-weight: 600;
-        }
-
-        .community-box {
-            background: linear-gradient(135deg, #6B21A8 0%, #9333EA 100%);
-            color: #FFFFFF;
-            padding: 2rem;
-            border-radius: 1.25rem;
-            text-align: center;
-            margin-top: 1.5rem;
-        }
-
-        .community-box i {
-            color: #F97316;
-            font-size: 2rem;
-            margin-bottom: 0.75rem;
-            display: block;
-        }
-
-        /* CTA Bar */
-        .cta-bar {
-            background: linear-gradient(135deg, #F97316 0%, #FDBA74 100%);
-            padding: 3rem 0;
-            color: #FFFFFF;
-        }
-
-        .cta-bar-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .cta-bar h2 {
-            font-size: 2rem;
+        .contact-card h3 {
+            color: #1f2937;
             margin-bottom: 0.5rem;
         }
 
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, #19032b 30%, #4b197a 100%);
-            color: #FFFFFF;
-            padding: 5rem 0 2rem;
+        .contact-card p {
+            color: #6b7280;
+        }
+
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 1rem 1rem;
         }
 
         .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 2rem;
         }
 
-        .footer-brand p {
-            color: #9CA3AF;
-            line-height: 1.9;
-            margin: 1.5rem 0;
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #fb923c;
         }
 
-        .footer-column h4 {
-            margin-bottom: 1.75rem;
-            color: #FFFFFF;
-            font-weight: 700;
-        }
-
-        .footer-column ul {
+        .footer-section ul {
             list-style: none;
         }
 
-        .footer-column li {
-            margin-bottom: 1rem;
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
         }
 
-        .footer-column a {
-            color: #9CA3AF;
+        .footer-section a {
+            color: #d1d5db;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: color 0.3s;
         }
 
-        .footer-column a:hover {
-            color: #F97316;
-            padding-left: 5px;
+        .footer-section a:hover {
+            color: white;
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 2.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #9CA3AF;
-            font-size: 0.875rem;
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        .footer-bottom-links a {
-            color: #9CA3AF;
-            text-decoration: none;
-        }
-
-        .footer-bottom-links a:hover {
-            color: #F97316;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-content,
-            .service-content,
-            .quote-request-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-
-            .specials-grid,
-            .testimonials-grid,
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid-slider {
-                grid-template-columns: repeat(3, 1fr);
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .nav-menu {
-                display: none;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-
-            .section-title {
-                font-size: 2.25rem;
-            }
-
-            .services-grid-slider {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .slider-container {
-                padding: 0 3rem;
-            }
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
         }
 
         @media (max-width: 640px) {
-            .hero-stats {
-                flex-direction: column;
-                gap: 1.5rem;
+            .section {
+                padding: 2rem 1rem;
             }
 
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .service-features {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid-slider {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-bar-content {
-                flex-direction: column;
-                gap: 1.5rem;
-                text-align: center;
+            .section-title h2 {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -1312,958 +727,694 @@
         <div class="top-bar-content">
             <div class="top-bar-links">
                 <a href="#">Brands We Carry</a>
-                <span class="top-bar-separator">|</span>
+                <span class="top-bar-divider">|</span>
                 <a href="#">About Us</a>
-                <span class="top-bar-separator">|</span>
+                <span class="top-bar-divider">|</span>
                 <a href="#">Contact Us</a>
-                <span class="top-bar-separator">|</span>
+                <span class="top-bar-divider">|</span>
                 <a href="#">Reviews</a>
-                <span class="top-bar-separator">|</span>
+                <span class="top-bar-divider">|</span>
                 <a href="#">Our Work</a>
-                <span class="top-bar-separator">|</span>
+                <span class="top-bar-divider">|</span>
                 <a href="#">Service Area</a>
-                <span class="top-bar-separator">|</span>
+                <span class="top-bar-divider">|</span>
                 <a href="#">Financing</a>
             </div>
+            <button class="hamburger" aria-label="Toggle navigation" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
     </div>
 
-    <!-- Main Header -->
-    <header class="main-header">
+    <!-- Header -->
+    <header class="header-main">
         <div class="header-content">
             <div class="logo">
-                <img src="logo.png" alt="Sophia Plumbing & HVAC Services">
+                <img src="logo-placeholder.png" alt="Sophia Plumbing & HVAC Services">
             </div>
-            <div class="header-right">
-                <a href="tel:5558204000" class="phone-number">
-                    <i class="fas fa-phone-alt"></i>
-                    Call us now!<br>(555) 820-4000
-                </a>
-                <a href="#estimate" class="btn btn-primary">Free Estimate</a>
-                <a href="#deal" class="btn btn-outline">Get our best deal</a>
+            <div class="header-contact">
+                <div class="phone-number">
+                    <span class="phone-label">Call us now!</span>
+                    <a href="tel:5558204000">(555) 820-4000</a>
+                </div>
+                <div class="header-buttons">
+                    <a href="#estimate" class="btn btn-orange">Free Estimate</a>
+                    <a href="#deal" class="btn btn-outline">Get our best deal</a>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Sticky Navigation -->
+    <!-- Main Navigation -->
     <nav class="main-nav">
-        <div class="nav-content">
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li>
-                    <a href="#plumbing">Plumbing <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 0.25rem;"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Plumbing Service & Repair</a></li>
-                        <li><a href="#">Hot Water Heater Repair, Replacement & Service</a></li>
-                        <li><a href="#">Sump Pump Repair & Replacement</a></li>
-                        <li><a href="#">Sewer Line Cleaning & Repair</a></li>
-                        <li><a href="#">Water Filtration & Water Softener Installation</a></li>
-                        <li><a href="#">Tankless Water Heater Repair & Replacements</a></li>
-                        <li><a href="#">Frozen Pipe & Pipe Leak Repair</a></li>
-                        <li><a href="#">New construction plumbing roughing</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#ac">Air Conditioning <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 0.25rem;"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Central AC Tuneup</a></li>
-                        <li><a href="#">Central AC HVAC Repair Service & Replacement</a></li>
-                        <li><a href="#">Ductless HVAC Split Air Systems</a></li>
-                        <li><a href="#">HVAC System Cleaning with UV Lights</a></li>
-                        <li><a href="#">Thermostat Repair & Replacement</a></li>
-                        <li><a href="#">Indoor Air Quality</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#heating">Heating <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 0.25rem;"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Heating System Repair, Service & Replacement</a></li>
-                        <li><a href="#">Furnace Repair, Service & Replacement</a></li>
-                        <li><a href="#">Boiler Repair, Service & Replacement</a></li>
-                        <li><a href="#">Navien combi boiler/water heater</a></li>
-                        <li><a href="#">Packaged / Combi HVAC Systems</a></li>
-                        <li><a href="#">Oil to Gas HVAC Conversion</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#sewer">Sewer & Drain <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 0.25rem;"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Sewer Line Cleaning & Repair</a></li>
-                        <li><a href="#">Sump Pump Repair & Replacement</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#water">Water Heaters <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 0.25rem;"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Hot Water Heater Repair, Replacement & Service</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#air">HVAC Indoor Air Quality <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 0.25rem;"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Indoor Air Quality</a></li>
-                        <li><a href="#">HVAC System Cleaning with UV Lights</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#construction">Construction Services <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 0.25rem;"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Kitchen Remodeling</a></li>
-                        <li><a href="#">Bathroom Remodeling</a></li>
-                        <li><a href="#">Interior Remodeling</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#commercial">Commercial Services <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 0.25rem;"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Commercial HVAC</a></li>
-                        <li><a href="#">Commercial Plumbing</a></li>
-                        <li><a href="#">Rooftop HVAC System Repairs & Replacement</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#residential">Residential Services <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 0.25rem;"></i></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Residential Services</a></li>
-                    </ul>
-                </li>
-            </ul>
+        <div class="nav-container">
+            <div class="nav-wrapper">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#plumbing" onclick="toggleDropdown(event, this)">Plumbing ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Plumbing Service & Repair</a></li>
+                            <li><a href="#">Hot Water Heater Repair, Replacement & Service</a></li>
+                            <li><a href="#">Sump Pump Repair & Replacement</a></li>
+                            <li><a href="#">Sewer Line Cleaning & Repair</a></li>
+                            <li><a href="#">Water Filtration & Water Softener Installation</a></li>
+                            <li><a href="#">Tankless Water Heater Repair & Replacements</a></li>
+                            <li><a href="#">Frozen Pipe & Pipe Leak Repair</a></li>
+                            <li><a href="#">New construction plumbing roughing</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#ac" onclick="toggleDropdown(event, this)">Air Conditioning ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Central AC Tuneup</a></li>
+                            <li><a href="#">Central AC HVAC Repair Service & Replacement</a></li>
+                            <li><a href="#">Ductless HVAC Split Air Systems</a></li>
+                            <li><a href="#">HVAC System Cleaning with UV Lights</a></li>
+                            <li><a href="#">Thermostat Repair & Replacement</a></li>
+                            <li><a href="#">Indoor Air Quality</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#heating" onclick="toggleDropdown(event, this)">Heating ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Heating System Repair, Service & Replacement</a></li>
+                            <li><a href="#">Furnace Repair, Service & Replacement</a></li>
+                            <li><a href="#">Boiler Repair, Service & Replacement</a></li>
+                            <li><a href="#">Navien combi boiler/water heater</a></li>
+                            <li><a href="#">Packaged / Combi HVAC Systems</a></li>
+                            <li><a href="#">Oil to Gas HVAC Conversion</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#sewer" onclick="toggleDropdown(event, this)">Sewer & Drain ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Sewer Line Cleaning & Repair</a></li>
+                            <li><a href="#">Sump Pump Repair & Replacement</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#water" onclick="toggleDropdown(event, this)">Water Heaters ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Hot Water Heater Repair, Replacement & Service</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#air" onclick="toggleDropdown(event, this)">HVAC Indoor Air Quality ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Indoor Air Quality</a></li>
+                            <li><a href="#">HVAC System Cleaning with UV Lights</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#construction" onclick="toggleDropdown(event, this)">Construction Services ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Kitchen Remodeling</a></li>
+                            <li><a href="#">Bathroom Remodeling</a></li>
+                            <li><a href="#">Interior Remodeling</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#commercial" onclick="toggleDropdown(event, this)">Commercial Services ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Commercial HVAC</a></li>
+                            <li><a href="#">Commercial Plumbing</a></li>
+                            <li><a href="#">Rooftop HVAC System Repairs & Replacement</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#residential" onclick="toggleDropdown(event, this)">Residential Services ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Residential Services</a></li>
+                            <li><a href="#">AVAILABLE 24/7 EMERGENCY SERVICE</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <div class="hero-badge">
-                    <i class="fas fa-bolt"></i>
-                    AVAILABLE 24/7 EMERGENCY SERVICE
-                </div>
-                <h1>Your Trusted Partner for <span>Plumbing & HVAC Solutions</span></h1>
+                <h1>Your Trusted Partner for Plumbing & HVAC Solutions</h1>
                 <p>Expert plumbing and HVAC services delivered with professionalism, craftsmanship, and care. Serving Phoenix and surrounding areas since 2009.</p>
-                <ul class="hero-features">
-                    <li><i class="fas fa-check-circle"></i> Licensed & Insured Technicians</li>
-                    <li><i class="fas fa-check-circle"></i> Clear, Turn-Key Pricing Available</li>
-                    <li><i class="fas fa-check-circle"></i> Veteran-Owned & Operated</li>
-                </ul>
-                <div class="hero-buttons">
-                    <a href="tel:5558204000" class="btn btn-primary">
-                        <i class="fas fa-phone-alt"></i> Call Now: (555) 820-4000
-                    </a>
-                    <a href="#services" class="btn btn-outline" style="background: rgba(0,0,0,0.6); color: #FFFFFF; border-color: rgba(255,255,255,0.3);">
-                        View Services <i class="fas fa-arrow-right"></i>
-                    </a>
+                <div class="hero-badges">
+                    <div class="badge">✓ Licensed & Insured Technicians</div>
+                    <div class="badge">✓ Clear, Turn-Key Pricing Available</div>
+                    <div class="badge">✓ Veteran-Owned & Operated</div>
                 </div>
+                <a href="tel:5558204000" class="btn btn-orange" style="font-size: 1.125rem; padding: 1rem 2rem;">
+                    Call Now: (555) 820-4000
+                </a>
+                <a href="#services" class="btn btn-outline" style="margin-left: 1rem;">View Services</a>
                 <div class="hero-stats">
-                    <div class="stat-item">
-                        <h3>15+</h3>
-                        <p>Years Experience</p>
+                    <div class="stat">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
                     </div>
-                    <div class="stat-item">
-                        <h3><i class="fas fa-star" style="color: #FBBF24; margin-right: 0.25rem;"></i>5.0</h3>
-                        <p>200+ Reviews</p>
+                    <div class="stat">
+                        <div class="stat-number">5.0</div>
+                        <div class="stat-label">200+ Reviews</div>
                     </div>
-                    <div class="stat-item">
-                        <h3>24/7</h3>
-                        <p>Emergency</p>
+                    <div class="stat">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Emergency</div>
                     </div>
                 </div>
             </div>
-            <div class="quote-form-container">
-                <form class="quote-form">
-                    <h3>Request Your Free Quote</h3>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Full Name *</label>
-                            <input type="text" placeholder="Marcus Johnson" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone Number *</label>
-                            <input type="tel" placeholder="(555) 000-0000" required>
-                        </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800" alt="HVAC Technician">
+                <div class="emergency-badge">
+                    <span>⚡</span>
+                    <span>AVAILABLE 24/7 EMERGENCY SERVICE</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section class="section" style="background: #f9fafb;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Request Your Free Quote</h2>
+                <p>Full Name * Phone Number * Email Address Service Address Service Needed * Select a service... Plumbing Repair HVAC Services Water Heater Emergency Service Describe Your Issue Request Free Quote Now</p>
+            </div>
+            <div class="form-container">
+                <p style="text-align: center; color: #6b7280; margin-bottom: 2rem;">Your information is secure. No spam, ever.</p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div>
+                        <div style="font-size: 2rem; font-weight: bold; color: #6b21a8;">15+</div>
+                        <div style="color: #6b7280;">Years of Service</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2rem; font-weight: bold; color: #6b21a8;">5,000+</div>
+                        <div style="color: #6b7280;">Trusted Homeowners</div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <strong style="color: #6b21a8;">YOUR TRUSTED HOME SERVICE EXPERTS</strong>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" required>
                     </div>
                     <div class="form-group">
                         <label>Email Address</label>
-                        <input type="email" placeholder="marcus@email.com">
+                        <input type="email">
                     </div>
                     <div class="form-group">
                         <label>Service Address</label>
-                        <input type="text" placeholder="123 Main St, Phoenix, AZ">
+                        <input type="text">
                     </div>
                     <div class="form-group">
                         <label>Service Needed *</label>
                         <select required>
                             <option value="">Select a service...</option>
-                            <option value="plumbing">Plumbing Repair</option>
-                            <option value="hvac">HVAC Services</option>
-                            <option value="water-heater">Water Heater</option>
-                            <option value="emergency">Emergency Service</option>
+                            <option>Plumbing Repair</option>
+                            <option>HVAC Services</option>
+                            <option>Water Heater</option>
+                            <option>Emergency Service</option>
                         </select>
                     </div>
                     <div class="form-group">
                         <label>Describe Your Issue</label>
-                        <textarea placeholder="Briefly describe what's happening..."></textarea>
+                        <textarea></textarea>
                     </div>
-                    <button type="submit" class="btn-submit">
-                        <i class="fas fa-paper-plane"></i> Request Free Quote Now
-                    </button>
-                    <div class="form-security">
-                        <i class="fas fa-shield-alt" style="color: #F97316;"></i>
-                        Your information is secure. No spam, ever.
-                    </div>
+                    <button type="submit" class="btn-submit">Request Free Quote Now</button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Professional Service Section -->
-    <section class="professional-service" id="about">
+    <!-- About Section -->
+    <section class="section">
         <div class="container">
-            <div class="service-content">
-                <div class="service-image-wrapper">
-                    <div class="service-image">
-                        <img src="pro-section.png" alt="Professional Team">
-                    </div>
-                    <div class="experience-badge">
-                        <div class="years">15+</div>
-                        <div class="text">Years of Service<br>Trusted by 5,000+ Homeowners</div>
-                    </div>
+            <div class="section-title">
+                <h2>Professional Service You Can Count On</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 3rem;">
+                <p style="font-size: 1.125rem; color: #4b5563; margin-bottom: 1.5rem;">
+                    SOPHIA is a plumbing and HVAC service company in our community for over 15 years. Our team of licensed technicians is committed to providing honest, reliable, and high-quality service for every job — big or small. We treat every home like it's our own.
+                </p>
+                <p style="color: #6b7280;">
+                    From emergency pipe repairs to full HVAC system installations, we bring expertise, integrity, and competitive pricing to every project. Our technicians undergo continuous training and background checks so you can feel safe having us in your home.
+                </p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3>Licensed & Insured</h3>
+                    <p>AZ ROC Certified</p>
                 </div>
-                <div class="service-text">
-                    <span class="section-tag">
-                        <i class="fas fa-star"></i>
-                        YOUR TRUSTED HOME SERVICE EXPERTS
-                    </span>
-                    <h2>Professional Service You Can Count On</h2>
-                    <p>SOPHIA is a plumbing and HVAC service company in our community for over 15 years. Our team of licensed technicians is committed to providing honest, reliable, and high-quality service for every job — big or small. We treat every home like it's our own.</p>
-                    <p>From emergency pipe repairs to full HVAC system installations, we bring expertise, integrity, and competitive pricing to every project. Our technicians undergo continuous training and background checks so you can feel safe having us in your home.</p>
-                    <div class="service-features">
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-certificate"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Licensed & Insured</h4>
-                                <p>AZ ROC Certified</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-users"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Expert Team</h4>
-                                <p>20+ Technicians</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-award"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>Quality Guaranteed</h4>
-                                <p>100% Satisfaction</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div class="feature-text">
-                                <h4>24/7 Emergency</h4>
-                                <p>Always Available</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="hero-buttons">
-                        <a href="#quote" class="btn btn-primary">
-                            <i class="fas fa-file-alt"></i> Get Free Estimate
-                        </a>
-                        <a href="tel:5558204000" class="btn btn-outline">
-                            <i class="fas fa-phone-alt"></i> Call Us Now
-                        </a>
-                    </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Expert Team</h3>
+                    <p>20+ Technicians</p>
                 </div>
+                <div class="feature-card">
+                    <div class="feature-icon">★</div>
+                    <h3>Quality Guaranteed</h3>
+                    <p>100% Satisfaction</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🕐</div>
+                    <h3>24/7 Emergency</h3>
+                    <p>Always Available</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#quote" class="btn btn-orange" style="margin-right: 1rem;">Get Free Estimate</a>
+                <a href="tel:5558204000" class="btn btn-outline">Call Us Now</a>
             </div>
         </div>
     </section>
 
-    <!-- Spring Specials -->
-    <section class="spring-specials">
+    <!-- Specials Section -->
+    <section class="section" style="background: linear-gradient(135deg, #ffedd5 0%, #f3e8ff 100%);">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">
-                    <i class="fas fa-sun"></i>
-                    SPRING SPECIALS
-                </span>
-                <h2 class="section-title">Exclusive Spring Deal!</h2>
-                <p class="section-subtitle">Don't miss our incredible savings for your Spring services</p>
+            <div class="section-title">
+                <h2>SPRING SPECIALS</h2>
+                <p>Exclusive Spring Deal!<br>Don't miss our incredible savings for your Spring services</p>
             </div>
-            <div class="specials-grid">
-                <div class="special-card featured">
-                    <span class="discount-badge">20% OFF</span>
+            <div class="services-grid">
+                <div class="service-card" style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: bold; color: #fb923c; margin-bottom: 0.5rem;">20% OFF</div>
                     <h3>Complete System Tune-Up</h3>
                     <p>Full HVAC inspection, cleaning, and optimization. Keep your system running at peak efficiency all season.</p>
                 </div>
-                <div class="special-card">
-                    <span class="discount-badge">$200 Special</span>
+                <div class="service-card" style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: bold; color: #fb923c; margin-bottom: 0.5rem;">$200 Special</div>
                     <h3>Complete System Tune-Up</h3>
                     <p>AC tune up + refrigerant check + filter replacement. Beat the summer heat before it arrives.</p>
                 </div>
-                <div class="special-card">
-                    <span class="discount-badge">$0 Service Fee</span>
+                <div class="service-card" style="text-align: center;">
+                    <div style="font-size: 2.5rem; font-weight: bold; color: #fb923c; margin-bottom: 0.5rem;">$0 Service Fee</div>
                     <h3>$0 Service Fee</h3>
                     <p>No service/visit fee with any repair over $150. Save on your next plumbing or HVAC repair this spring.</p>
                 </div>
             </div>
-            <div class="specials-cta">
-                <h3>Ready to Save Big on Your Home Services?</h3>
-                <a href="#quote" class="btn btn-outline" style="margin-right: 1rem;">Get Your Deal Now</a>
-                <a href="#quote" class="btn btn-primary">
-                    <i class="fas fa-file-alt"></i> Request Free Quote
-                </a>
+            <div style="text-align: center; margin-top: 3rem;">
+                <h3 style="margin-bottom: 1rem; color: #1f2937;">Ready to Save Big on Your Home Services?</h3>
+                <a href="#quote" class="btn btn-orange" style="margin-right: 1rem;">Get Your Deal Now</a>
+                <a href="#quote" class="btn btn-outline">Request Free Quote</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Slider Section -->
-    <section class="services-slider-section" id="services">
+    <!-- Services Section -->
+    <section class="section" id="services">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">
-                    <i class="fas fa-cogs"></i>
-                    OUR SERVICES
-                </span>
-                <h2 class="section-title">Comprehensive Home Services</h2>
-                <p class="section-subtitle">A reliable relationship is our top priority. We provide expert plumbing, heating, and cooling services to keep your home comfortable year-round.</p>
+            <div class="section-title">
+                <h2>OUR SERVICES</h2>
+                <p>Comprehensive Home Services<br>A reliable relationship is our top priority. We provide expert plumbing, heating, and cooling services to keep your home comfortable year-round.</p>
             </div>
-        </div>
-        <div class="slider-container">
-            <button class="slider-btn prev" onclick="moveSlider(-1)"><i class="fas fa-chevron-left"></i></button>
-            <div class="slider-wrapper">
-                <div class="slider-track" id="sliderTrack">
-                    <!-- Slide 1 -->
-                    <div class="services-grid-slider">
-                        <div class="service-card-slider">
-                            <div class="service-card-slider-icon">
-                                <i class="fas fa-faucet"></i>
-                            </div>
-                            <h3>Plumbing Repair</h3>
-                            <p>From leaky faucets to full repiping projects. Fast diagnosis and repair.</p>
-                        </div>
-                        <div class="service-card-slider">
-                            <div class="service-card-slider-icon">
-                                <i class="fas fa-fire-alt"></i>
-                            </div>
-                            <h3>Heating Services</h3>
-                            <p>Furnace installation, repair, and maintenance for winter comfort.</p>
-                        </div>
-                        <div class="service-card-slider">
-                            <div class="service-card-slider-icon">
-                                <i class="fas fa-snowflake"></i>
-                            </div>
-                            <h3>Air Conditioning</h3>
-                            <p>AC installation, tune-ups, and emergency repairs for Arizona heat.</p>
-                        </div>
-                        <div class="service-card-slider">
-                            <div class="service-card-slider-icon">
-                                <i class="fas fa-temperature-high"></i>
-                            </div>
-                            <h3>Water Heaters</h3>
-                            <p>Traditional and tankless water heater installation and repair.</p>
-                        </div>
-                        <div class="service-card-slider">
-                            <div class="service-card-slider-icon">
-                                <i class="fas fa-wind"></i>
-                            </div>
-                            <h3>Duct Cleaning</h3>
-                            <p>Professional air duct cleaning for cleaner air and efficiency.</p>
-                        </div>
-                        <div class="service-card-slider">
-                            <div class="service-card-slider-icon">
-                                <i class="fas fa-exclamation-triangle"></i>
-                            </div>
-                            <h3>Emergency Services</h3>
-                            <p>24/7 emergency response for burst pipes, no heat, AC failures.</p>
-                        </div>
-                    </div>
-                    <!-- Slide 2 -->
-                    <div class="services-grid-slider">
-                        <div class="service-card-slider">
-                            <div class="service-card-slider-icon">
-                                <i class="fas fa-tools"></i>
-                            </div>
-                            <h3>Sewer & Drain</h3>
-                            <p>Sewer line cleaning, repair, and sump pump services.</p>
-                        </div>
-                        <div class="service-card-slider">
-                            <div class="service-card-slider-icon">
-                                <i class="fas fa-tint"></i>
-                            </div>
-                            <h3>Water Filtration</h3>
-                            <p>Water softener and filtration system installation.</p>
-                        </div>
-                        <div class="service-card-slider">
-                            <div class="service-card-slider-icon">
-                                <i class="fas fa-home"></i>
-                            </div>
-                            <h3>Kitchen Remodeling</h3>
-                            <p>Complete kitchen remodeling with plumbing and HVAC.</p>
-                        </div>
-                        <div class="service-card-slider">
-                            <div class="service-card-slider-icon">
-                                <i class="fas fa-bath"></i>
-                            </div>
-                            <h3>Bathroom Remodeling</h3>
-                            <p>Bathroom renovation with expert plumbing services.</p>
-                        </div>
-                        <div class="service-card-slider">
-                            <div class="service-card-slider-icon">
-                                <i class="fas fa-building"></i>
-                            </div>
-                            <h3>Commercial HVAC</h3>
-                            <p>Commercial heating and cooling system services.</p>
-                        </div>
-                        <div class="service-card-slider">
-                            <div class="service-card-slider-icon">
-                                <i class="fas fa-industry"></i>
-                            </div>
-                            <h3>Commercial Plumbing</h3>
-                            <p>Professional plumbing for businesses and commercial properties.</p>
-                        </div>
-                    </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Plumbing Repair</h3>
+                    <p>From leaky faucets to full repiping projects. Fast diagnosis and repair.</p>
                 </div>
-            </div>
-            <button class="slider-btn next" onclick="moveSlider(1)"><i class="fas fa-chevron-right"></i></button>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery" id="gallery">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">
-                    <i class="fas fa-images"></i>
-                    OUR WORK
-                </span>
-                <h2 class="section-title">Gallery of Excellence</h2>
-                <p class="section-subtitle">We take pride in every job we complete. Browse our recent work and see the quality we bring.</p>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600" alt="HVAC Work">
-                    <span class="gallery-category">HVAC</span>
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
+                <div class="service-card">
+                    <h3>Heating Services</h3>
+                    <p>Furnace installation, repair, and maintenance for winter comfort.</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600" alt="Plumbing Work">
-                    <span class="gallery-category">Plumbing</span>
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
+                <div class="service-card">
+                    <h3>Air Conditioning</h3>
+                    <p>AC installation, tune-ups, and emergency repairs for Arizona heat.</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600" alt="Water Heater">
-                    <span class="gallery-category">Plumbing</span>
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
+                <div class="service-card">
+                    <h3>Water Heaters</h3>
+                    <p>Traditional and tankless water heater installation and repair.</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600" alt="Heating Service">
-                    <span class="gallery-category">Heating</span>
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
+                <div class="service-card">
+                    <h3>Duct Cleaning</h3>
+                    <p>Professional air duct cleaning for cleaner air and efficiency.</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600" alt="HVAC Installation">
-                    <span class="gallery-category">HVAC</span>
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
+                <div class="service-card">
+                    <h3>Emergency Services</h3>
+                    <p>24/7 emergency response for burst pipes, no heat, AC failures.</p>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600" alt="Bathroom Plumbing">
-                    <span class="gallery-category">Plumbing</span>
-                    <div class="gallery-overlay">
-                        <i class="fas fa-search-plus"></i>
-                    </div>
+                <div class="service-card">
+                    <h3>Sewer & Drain</h3>
+                    <p>Sewer line cleaning, repair, and sump pump services.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Water Filtration</h3>
+                    <p>Water softener and filtration system installation.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Kitchen Remodeling</h3>
+                    <p>Complete kitchen remodeling with plumbing and HVAC.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Bathroom Remodeling</h3>
+                    <p>Bathroom renovation with expert plumbing services.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Commercial HVAC</h3>
+                    <p>Commercial heating and cooling system services.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Commercial Plumbing</h3>
+                    <p>Professional plumbing for businesses and commercial properties.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials" id="testimonials">
+    <!-- Work Gallery Section -->
+    <section class="section" style="background: #f9fafb;">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">
-                    <i class="fas fa-comments"></i>
-                    TESTIMONIALS
-                </span>
-                <h2 class="section-title">What Our Customers Say</h2>
-                <p class="section-subtitle">Don't just take our word for it — hear from homeowners across Phoenix.</p>
+            <div class="section-title">
+                <h2>OUR WORK</h2>
+                <p>Gallery of Excellence<br>We take pride in every job we complete. Browse our recent work and see the quality we bring.</p>
             </div>
-            <div class="testimonials-rating">
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+            <div class="services-grid">
+                <div style="position: relative; overflow: hidden; border-radius: 0.5rem;">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=600" alt="HVAC" style="width: 100%; height: 300px; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(107, 33, 168, 0.9); color: white; padding: 1rem;">HVAC</div>
                 </div>
-                <div class="rating-text">
-                    <strong>5.0</strong> from 200+ reviews
+                <div style="position: relative; overflow: hidden; border-radius: 0.5rem;">
+                    <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600" alt="Plumbing" style="width: 100%; height: 300px; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(107, 33, 168, 0.9); color: white; padding: 1rem;">Plumbing</div>
+                </div>
+                <div style="position: relative; overflow: hidden; border-radius: 0.5rem;">
+                    <img src="https://images.unsplash.com/photo-1504148455328-c376907d081c?w=600" alt="Plumbing" style="width: 100%; height: 300px; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(107, 33, 168, 0.9); color: white; padding: 1rem;">Plumbing</div>
+                </div>
+                <div style="position: relative; overflow: hidden; border-radius: 0.5rem;">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600" alt="Heating" style="width: 100%; height: 300px; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(107, 33, 168, 0.9); color: white; padding: 1rem;">Heating</div>
+                </div>
+                <div style="position: relative; overflow: hidden; border-radius: 0.5rem;">
+                    <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600" alt="HVAC" style="width: 100%; height: 300px; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(107, 33, 168, 0.9); color: white; padding: 1rem;">HVAC</div>
+                </div>
+                <div style="position: relative; overflow: hidden; border-radius: 0.5rem;">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600" alt="Plumbing" style="width: 100%; height: 300px; object-fit: cover;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(107, 33, 168, 0.9); color: white; padding: 1rem;">Plumbing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>TESTIMONIALS</h2>
+                <p>What Our Customers Say<br>Don't just take our word for it — hear from homeowners across Phoenix.</p>
+                <div style="margin-top: 1rem; font-size: 1.25rem; font-weight: bold; color: #fb923c;">
+                    5.0 from 200+ reviews
                 </div>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
                     <p class="testimonial-text">"SophiaPlumbing fixed our burst pipe at 3am on a Sunday. The technician arrived in 35 minutes, was professional, and the price was exactly what they quoted."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MJ</div>
-                        <div class="author-info">
-                            <h4>Marcus Johnson</h4>
-                            <p>Homeowner, Phoenix AZ</p>
-                        </div>
-                    </div>
+                    <div class="testimonial-author">Marcus Johnson</div>
+                    <div class="testimonial-role">Homeowner, Phoenix AZ</div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
                     <p class="testimonial-text">"I manage 12 rental units and SophiaPlumbing handles all our HVAC maintenance. They are reliable, thorough, and their pricing is transparent."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">DR</div>
-                        <div class="author-info">
-                            <h4>Diane Reyes</h4>
-                            <p>Property Manager, Scottsdale AZ</p>
-                        </div>
-                    </div>
+                    <div class="testimonial-author">Diane Reyes</div>
+                    <div class="testimonial-role">Property Manager, Scottsdale AZ</div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
                     <p class="testimonial-text">"Had a new water heater installed last month. The team was on time, cleaned up after themselves, and walked me through the whole system."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">TW</div>
-                        <div class="author-info">
-                            <h4>Trevor Williams</h4>
-                            <p>Homeowner, Tempe AZ</p>
-                        </div>
-                    </div>
+                    <div class="testimonial-author">Trevor Williams</div>
+                    <div class="testimonial-role">Homeowner, Tempe AZ</div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
                     <p class="testimonial-text">"My AC died in July. SophiaPlumbing came out same day, diagnosed the problem quickly, and had us cool again by evening. Saved our summer!"</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">PN</div>
-                        <div class="author-info">
-                            <h4>Priya Nair</h4>
-                            <p>Homeowner, Mesa AZ</p>
-                        </div>
-                    </div>
+                    <div class="testimonial-author">Priya Nair</div>
+                    <div class="testimonial-role">Homeowner, Mesa AZ</div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
                     <p class="testimonial-text">"Used them for our office HVAC system overhaul. Professional project management, zero disruption to our business operations."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">RC</div>
-                        <div class="author-info">
-                            <h4>Robert Chen</h4>
-                            <p>Business Owner, Chandler AZ</p>
-                        </div>
-                    </div>
+                    <div class="testimonial-author">Robert Chen</div>
+                    <div class="testimonial-role">Business Owner, Chandler AZ</div>
                 </div>
                 <div class="testimonial-card">
-                    <div class="testimonial-stars">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
                     <p class="testimonial-text">"The duct cleaning service was incredible. Now the air feels cleaner and our energy bill actually dropped. Worth every penny."</p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">SO</div>
-                        <div class="author-info">
-                            <h4>Sandra Okafur</h4>
-                            <p>Homeowner, Gilbert AZ</p>
-                        </div>
-                    </div>
+                    <div class="testimonial-author">Sandra Okafur</div>
+                    <div class="testimonial-role">Homeowner, Gilbert AZ</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quote Request -->
-    <section class="quote-request" id="quote">
+    <!-- Free Quote Section -->
+    <section class="section" style="background: linear-gradient(135deg, #ffedd5 0%, #f3e8ff 100%);" id="quote">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">
-                    <i class="fas fa-file-alt"></i>
-                    FREE QUOTE
-                </span>
-                <h2 class="section-title">Request Your Free Quote</h2>
-                <p class="section-subtitle">Fill out the form and one of our specialists will contact you within 30 minutes.</p>
+            <div class="section-title">
+                <h2>FREE QUOTE</h2>
+                <p>Request Your Free Quote<br>Fill out the form and one of our specialists will contact you within 30 minutes.</p>
             </div>
-            <div class="quote-request-content">
-                <form class="quote-request-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Full Name *</label>
-                            <input type="text" placeholder="Marcus Johnson" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Phone Number *</label>
-                            <input type="tel" placeholder="(555) 000-0000" required>
-                        </div>
+            <div class="form-container">
+                <form>
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone Number *</label>
+                        <input type="tel" required>
                     </div>
                     <div class="form-group">
                         <label>Email Address</label>
-                        <input type="email" placeholder="marcus@email.com">
+                        <input type="email">
                     </div>
                     <div class="form-group">
                         <label>Service Address *</label>
-                        <input type="text" placeholder="123 Main St, Phoenix, AZ 85001" required>
+                        <input type="text" required>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Service Type *</label>
-                            <select required>
-                                <option value="">Select service...</option>
-                                <option value="plumbing">Plumbing Repair</option>
-                                <option value="hvac">HVAC Services</option>
-                                <option value="water-heater">Water Heater</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Urgency</label>
-                            <select>
-                                <option value="">Select urgency...</option>
-                                <option value="emergency">Emergency - Need Now</option>
-                                <option value="urgent">Urgent - This Week</option>
-                                <option value="scheduled">Scheduled - Flexible</option>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label>Service Type *</label>
+                        <select required>
+                            <option value="">Select service...</option>
+                            <option>Plumbing Repair</option>
+                            <option>HVAC Services</option>
+                            <option>Water Heater</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Urgency</label>
+                        <select>
+                            <option value="">Select urgency...</option>
+                            <option>Emergency - Need Now</option>
+                            <option>Urgent - This Week</option>
+                            <option>Scheduled - Flexible</option>
+                        </select>
                     </div>
                     <div class="form-group">
                         <label>Describe the Issue</label>
-                        <textarea placeholder="Please describe what's happening in detail..." rows="4"></textarea>
+                        <textarea></textarea>
                     </div>
-                    <button type="submit" class="btn-submit">
-                        <i class="fas fa-paper-plane"></i> Submit Free Quote Request
-                    </button>
-                    <div class="form-security">
-                        <i class="fas fa-lock"></i>
-                        Secure form. We never share your information.
-                    </div>
+                    <button type="submit" class="btn-submit">Submit Free Quote Request</button>
                 </form>
-                <div class="right-column">
-                    <div class="why-choose-us">
-                        <h3><i class="fas fa-check-circle" style="margin-right: 0.5rem;"></i> Why Choose SOPHIA?</h3>
-                        <ul class="why-list">
-                            <li><i class="fas fa-check"></i> Licensed & Fully Insured</li>
-                            <li><i class="fas fa-check"></i> Same-Day Service Available</li>
-                            <li><i class="fas fa-check"></i> Upfront, Transparent Pricing</li>
-                            <li><i class="fas fa-check"></i> 5-Star Rated on Google & Yelp</li>
-                            <li><i class="fas fa-check"></i> Factory-Trained Technicians</li>
-                            <li><i class="fas fa-check"></i> Veteran-Owned & Operated</li>
-                        </ul>
-                    </div>
-                    <div class="emergency-box">
-                        <h3><i class="fas fa-exclamation-circle" style="margin-right: 0.5rem;"></i> Need Immediate Help?</h3>
-                        <p>For emergencies, call us directly. We answer 24/7 and dispatch technicians immediately.</p>
-                        <a href="tel:5558204000" class="btn btn-outline" style="margin-top: 0.5rem;">
-                            <i class="fas fa-phone-alt"></i> Call (555) 820-4000
-                        </a>
-                    </div>
-                    <div class="review-card">
-                        <div class="stars" style="margin-bottom: 0.75rem;">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <strong style="color: #6B21A8; font-size: 1.25rem;">5.0</strong>
-                        <p style="color: #6B7280; font-size: 0.9rem; margin-top: 0.5rem;">Rated 5 stars by <strong>200+ verified customers</strong> on Google, Yelp, and HomeAdvisor.</p>
-                    </div>
+                <p style="text-align: center; margin-top: 1rem; color: #6b7280; font-size: 0.875rem;">
+                    Secure form. We never share your information.
+                </p>
+            </div>
+            <div style="max-width: 600px; margin: 3rem auto 0; text-align: center;">
+                <h3 style="margin-bottom: 1.5rem; color: #1f2937;">Why Choose SOPHIA?</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; text-align: left;">
+                    <div>✓ Licensed & Fully Insured</div>
+                    <div>✓ Same-Day Service Available</div>
+                    <div>✓ Upfront, Transparent Pricing</div>
+                    <div>✓ 5-Star Rated on Google & Yelp</div>
+                    <div>✓ Factory-Trained Technicians</div>
+                    <div>✓ Veteran-Owned & Operated</div>
+                </div>
+                <div style="margin-top: 2rem; padding: 1.5rem; background: white; border-radius: 0.5rem;">
+                    <h4 style="color: #1f2937; margin-bottom: 0.5rem;">Need Immediate Help?</h4>
+                    <p style="color: #6b7280; margin-bottom: 1rem;">For emergencies, call us directly. We answer 24/7 and dispatch technicians immediately.</p>
+                    <a href="tel:5558204000" class="btn btn-orange">Call (555) 820-4000</a>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <div style="font-size: 2rem; font-weight: bold; color: #fb923c;">5.0</div>
+                    <div style="color: #6b7280;">Rated 5 stars by 200+ verified customers on Google, Yelp, and HomeAdvisor.</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section class="section">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">
-                    <i class="fas fa-envelope"></i>
-                    CONTACT US
-                </span>
-                <h2 class="section-title">Contact Us Today</h2>
-                <p class="section-subtitle">Have questions? Ready to schedule? Our friendly team is standing by.</p>
+            <div class="section-title">
+                <h2>CONTACT US</h2>
+                <p>Contact Us Today<br>Have questions? Ready to schedule? Our friendly team is standing by.</p>
             </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>PHONE</h4>
-                            <p><strong>(555) 820-4000</strong><br>Emergency: (555) 820-9911</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>EMAIL</h4>
-                            <p><strong>info@sophiaplumbing.com</strong><br>We reply within 2 hours</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>ADDRESS</h4>
-                            <p><strong>4820 Westfield Ave, Suite 200</strong><br>Phoenix, AZ 85001</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>BUSINESS HOURS</h4>
-                            <p><strong>Mon-Sat: 7:00 AM - 8:00 PM</strong><br>Emergency: 24/7 Available</p>
-                        </div>
-                    </div>
-                    <div class="social-box">
-                        <h4>FOLLOW US</h4>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="#"><i class="fab fa-youtube"></i></a>
-                            <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                            <a href="#"><i class="fab fa-tiktok"></i></a>
-                        </div>
-                    </div>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>PHONE</h3>
+                    <p>(555) 820-4000<br>Emergency: (555) 820-9911</p>
                 </div>
-                <div class="map-container">
-                    <div class="map-placeholder">
-                        <div>
-                            <i class="fas fa-map-marked-alt"></i>
-                            <strong>SophiaPlumbing HQ</strong><br>
-                            4820 Westfield Ave, Phoenix, AZ
-                        </div>
-                    </div>
-                    <h4 style="margin-bottom: 1.25rem; color: #6B21A8; font-weight: 700;">
-                        <i class="fas fa-map" style="margin-right: 0.5rem;"></i> Service Area Map
-                    </h4>
-                    <p style="color: #6B7280; margin-bottom: 1.5rem;">We proudly serve Phoenix and the entire metro area including Scottsdale, Tempe, Mesa, Chandler, Gilbert, and Glendale.</p>
-                    <div class="service-areas">
-                        <span class="area-tag">Phoenix</span>
-                        <span class="area-tag">Scottsdale</span>
-                        <span class="area-tag">Tempe</span>
-                        <span class="area-tag">Mesa</span>
-                        <span class="area-tag">Chandler</span>
-                        <span class="area-tag">Gilbert</span>
-                        <span class="area-tag">Glendale</span>
-                    </div>
-                    <a href="#" class="btn btn-primary" style="width: 100%; margin-top: 1.5rem; justify-content: center;">
-                        <i class="fas fa-search-location"></i> Check My Area
-                    </a>
-                    <div class="community-box">
-                        <i class="fas fa-heart"></i>
-                        <strong>Proudly Serving Your Community</strong>
-                        <p>SophiaPlumbing is a veteran-owned, locally operated business. We live here too – and we treat every home like our own.</p>
-                    </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>EMAIL</h3>
+                    <p>info@sophiaplumbing.com<br>We reply within 2 hours</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>ADDRESS</h3>
+                    <p>4820 Westfield Ave, Suite 200<br>Phoenix, AZ 85001</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">🕐</div>
+                    <h3>BUSINESS HOURS</h3>
+                    <p>Mon-Sat: 7:00 AM - 8:00 PM<br>Emergency: 24/7 Available</p>
+                </div>
+            </div>
+            <div style="margin-top: 3rem;">
+                <h3 style="text-align: center; margin-bottom: 1rem; color: #1f2937;">FOLLOW US</h3>
+                <div style="text-align: center; color: #6b7280;">
+                    SophiaPlumbing HQ<br>
+                    4820 Westfield Ave, Phoenix, AZ
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Bar -->
-    <div class="cta-bar">
+    <!-- Service Area Section -->
+    <section class="section" style="background: #f9fafb;">
         <div class="container">
-            <div class="cta-bar-content">
-                <div>
-                    <h2>Ready to Get Started?</h2>
-                    <p>Call us now or request a free quote online. Same-day service available.</p>
-                </div>
-                <div style="display: flex; gap: 1rem;">
-                    <a href="tel:5558204000" class="btn btn-outline btn-large">
-                        <i class="fas fa-phone-alt"></i> Call (555) 820-4000
-                    </a>
-                    <a href="#quote" class="btn btn-primary btn-large">
-                        <i class="fas fa-file-alt"></i> Get Free Quote
-                    </a>
-                </div>
+            <div class="section-title">
+                <h2>Service Area Map</h2>
+            </div>
+            <p style="text-align: center; color: #6b7280; margin-bottom: 2rem;">
+                We proudly serve Phoenix and the entire metro area including Scottsdale, Tempe, Mesa, Chandler, Gilbert, and Glendale.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 2rem;">
+                <span style="background: white; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 600; color: #6b21a8;">Phoenix</span>
+                <span style="background: white; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 600; color: #6b21a8;">Scottsdale</span>
+                <span style="background: white; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 600; color: #6b21a8;">Tempe</span>
+                <span style="background: white; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 600; color: #6b21a8;">Mesa</span>
+                <span style="background: white; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 600; color: #6b21a8;">Chandler</span>
+                <span style="background: white; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 600; color: #6b21a8;">Gilbert</span>
+                <span style="background: white; padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 600; color: #6b21a8;">Glendale</span>
+            </div>
+            <div style="text-align: center;">
+                <a href="#" class="btn btn-orange">Check My Area</a>
+            </div>
+            <div style="max-width: 800px; margin: 3rem auto 0; text-align: center;">
+                <h3 style="color: #1f2937; margin-bottom: 1rem;">Proudly Serving Your Community</h3>
+                <p style="color: #6b7280;">
+                    SophiaPlumbing is a veteran-owned, locally operated business. We live here too – and we treat every home like our own.
+                </p>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <h3 style="color: #1f2937; margin-bottom: 1rem;">Ready to Get Started?</h3>
+                <p style="color: #6b7280; margin-bottom: 1.5rem;">Call us now or request a free quote online. Same-day service available.</p>
+                <a href="tel:5558204000" class="btn btn-orange" style="margin-right: 1rem;">Call (555) 820-4000</a>
+                <a href="#quote" class="btn btn-outline">Get Free Quote</a>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo" style="margin-bottom: 1rem;">
-                        <img src="logo.png" alt="Sophia Plumbing & HVAC" style="height: 150px;">
-                    </div>
-                    <p>Trusted plumbing & HVAC experts serving your community for over 15 years. Licensed, insured, and available 24/7 for emergencies.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
-                        <a href="#"><i class="fab fa-tiktok"></i></a>
-                    </div>
-                </div>
-                <div class="footer-column">
-                    <h4>SERVICES</h4>
-                    <ul>
-                        <li><a href="#">Plumbing Repair</a></li>
-                        <li><a href="#">Heating Services</a></li>
-                        <li><a href="#">Air Conditioning</a></li>
-                        <li><a href="#">Water Heater Services</a></li>
-                        <li><a href="#">Sewer & Drain</a></li>
-                        <li><a href="#">HVAC Indoor Air Quality</a></li>
-                        <li><a href="#">Construction Services</a></li>
-                        <li><a href="#">Commercial Services</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>COMPANY</h4>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Our Work</a></li>
-                        <li><a href="#">Service Area</a></li>
-                        <li><a href="#">Reviews</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Financing</a></li>
-                        <li><a href="#">Brands We Carry</a></li>
-                    </ul>
-                </div>
-                <div class="footer-column">
-                    <h4>CONTACT</h4>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right: 0.5rem;"></i> 4820 Westfield Ave, Suite 200<br>Phoenix, AZ 85001</a></li>
-                        <li><a href="#"><i class="fas fa-phone-alt" style="margin-right: 0.5rem;"></i> (555) 820-4000</a></li>
-                        <li><a href="#"><i class="fas fa-envelope" style="margin-right: 0.5rem;"></i> info@sophiaplumbing.com</a></li>
-                        <li><a href="#"><i class="fas fa-clock" style="margin-right: 0.5rem;"></i> Mon-Sat: 7AM-8PM<br>Emergency: 24/7</a></li>
-                    </ul>
-                </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <p style="color: #9ca3af; margin-bottom: 1rem;">
+                    Trusted plumbing & HVAC experts serving your community for over 15 years. Licensed, insured, and available 24/7 for emergencies.
+                </p>
             </div>
-            <div class="footer-bottom">
-                <div>© 2026 Sophia Plumbing And HVAC Services. All rights reserved. Licensed & Insured</div>
-                <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Sitemap</a>
-                </div>
+            <div class="footer-section">
+                <h3>SERVICES</h3>
+                <ul>
+                    <li><a href="#">Plumbing Repair</a></li>
+                    <li><a href="#">Heating Services</a></li>
+                    <li><a href="#">Air Conditioning</a></li>
+                    <li><a href="#">Water Heater Services</a></li>
+                    <li><a href="#">Sewer & Drain</a></li>
+                    <li><a href="#">HVAC Indoor Air Quality</a></li>
+                    <li><a href="#">Construction Services</a></li>
+                    <li><a href="#">Commercial Services</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>COMPANY</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Our Work</a></li>
+                    <li><a href="#">Service Area</a></li>
+                    <li><a href="#">Reviews</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Financing</a></li>
+                    <li><a href="#">Brands We Carry</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>CONTACT</h3>
+                <ul>
+                    <li><a href="#">📍 4820 Westfield Ave, Suite 200</a></li>
+                    <li><a href="#">Phoenix, AZ 85001</a></li>
+                    <li><a href="#">📞 (555) 820-4000</a></li>
+                    <li><a href="#">✉️ info@sophiaplumbing.com</a></li>
+                    <li><a href="#">🕐 Mon-Sat: 7AM-8PM</a></li>
+                    <li><a href="#">Emergency: 24/7</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Sophia Plumbing And HVAC Services. All rights reserved. Licensed & Insured</p>
+            <div style="margin-top: 1rem;">
+                <a href="#" style="margin: 0 0.5rem;">Privacy Policy</a>
+                <a href="#" style="margin: 0 0.5rem;">Terms of Service</a>
+                <a href="#" style="margin: 0 0.5rem;">Sitemap</a>
             </div>
         </div>
     </footer>
 
     <script>
-        // Slider functionality
-        let currentSlide = 0;
-        const totalSlides = 2;
-
-        function moveSlider(direction) {
-            currentSlide += direction;
-            if (currentSlide < 0) currentSlide = totalSlides - 1;
-            if (currentSlide >= totalSlides) currentSlide = 0;
-            
-            const track = document.getElementById('sliderTrack');
-            track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        // Toggle mobile menu
+        function toggleMenu() {
+            const navMenu = document.getElementById('navMenu');
+            const hamburger = document.querySelector('.hamburger');
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
         }
 
-        // Auto-advance slider
-        setInterval(() => {
-            moveSlider(1);
-        }, 5000);
+        // Toggle dropdown on mobile
+        function toggleDropdown(event, element) {
+            if (window.innerWidth <= 992) {
+                event.preventDefault();
+                const dropdown = element.parentElement;
+                dropdown.classList.toggle('active');
+            }
+        }
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('.main-nav');
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (!nav.contains(event.target) && !hamburger.contains(event.target)) {
+                navMenu.classList.remove('active');
+                hamburger.classList.remove('active');
+                document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+            }
         });
 
-        // Form submission
-        document.querySelectorAll('form').forEach(form => {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                alert('Thank you for your request! We will contact you within 30 minutes.');
-                this.reset();
-            });
-        });
-
-        // Logo fallback
-        window.addEventListener('load', function() {
-            const logoImgs = document.querySelectorAll('.logo img');
-            logoImgs.forEach(logoImg => {
-                logoImg.onerror = function() {
-                    this.style.display = 'none';
-                    const fallback = document.createElement('div');
-                    fallback.innerHTML = `
-                        <div style="font-size: 2rem; font-weight: 900; background: linear-gradient(135deg, #6B21A8, #F97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                            SOPHIA
-                        </div>
-                        <div style="font-size: 1rem; font-weight: 700; color: #F97316;">PLUMBING & HVAC</div>
-                        <div style="font-size: 0.75rem; color: #6B21A8; letter-spacing: 3px;">SERVICES</div>
-                    `;
-                    this.parentNode.replaceChild(fallback, this);
-                };
-            });
+        // Close menu on window resize if open
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 992) {
+                document.getElementById('navMenu').classList.remove('active');
+                document.querySelector('.hamburger').classList.remove('active');
+                document.querySelectorAll('.dropdown').forEach(d => d.classList.remove('active'));
+            }
         });
     </script>
 </body>
